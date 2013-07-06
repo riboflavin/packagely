@@ -1,0 +1,21 @@
+default: &DEFAULT
+
+#  db removed, to reenable uncomment these lines
+
+#  adapter: postgresql
+#  encoding: utf8
+#  min_messages: warning
+
+#  host: <%=ENV['db_host'] %>
+#  database: 'Packagely'
+#  username: <%=ENV['db_username']%>
+#  password: <%=ENV['db_password']%>
+
+development:
+  <<: *DEFAULT
+
+production:
+  <<: *DEFAULT
+
+test:
+  <<: *DEFAULT

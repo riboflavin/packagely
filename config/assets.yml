@@ -1,0 +1,15 @@
+package_assets: off
+compress_assets: off
+
+javascripts:
+    all:
+        - public/javascripts/vendor/jquery.min.js
+        - public/javascripts/vendor/bootstrap.js
+        - public/javascripts/components/c-front.js
+        - public/javascripts/components/select2/select2.js
+stylesheets:
+    all:
+        - public/stylesheets/vendor/bootstrap.min.css
+        - public/stylesheets/vendor/jquery-ui.css
+        - public/stylesheets/c-core.css
+        - public/javascripts/components/select2/select2.css

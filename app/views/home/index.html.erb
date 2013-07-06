@@ -1,0 +1,34 @@
+<% content_for :css do %>
+	<%= include_stylesheets :all %>
+<% end %>
+
+<div class="container">
+
+<h2>I need to promote...</h2>
+
+<select id="types" style="width: 600px;">
+	<option>Please Select...</option>
+</select>
+
+<h2>Here's what to use:</h2>
+
+<p>
+  <button class="btn btn-primary" type="button" id="display_button" data-toggle="recommended" onclick="toggle_display();">Showing Recommended, Show All</button>
+</p>
+
+<table id="results" class="table">
+	<tr id="header">
+		<th>Content Type</th>
+		<th>How Many?</th>
+		<th>Who Can Help?</th>
+		<th>Notes</th>
+	</tr>
+</table>
+
+<small style="color:white;">Written by <a href="http://justindunham.net" style="color: white; text-decoration: underline;">Justin Dunham</a>. <a href="http://www.github.com/riboflavin/riseofthe" style="color: white; text-decoration: underline;">Source code on Github</a>.</small>
+</div>
+
+
+<% content_for :js do %>
+	<%= include_javascripts :all %>
+<% end %>
