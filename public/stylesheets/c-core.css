@@ -1,6 +1,37 @@
 body {
 }
 
+#main {
+margin-left: auto;
+margin-right: auto;
+width: 1000px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 28px;
+}
+
+table
+{
+  table-layout: fixed;
+  width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#types, .select2-container
+{
+  width: 400px;
+}
+
+#results
+{
+  /*height: 1200px;*/
+  border: 1px solid #ddd;
+  border-radius: 6px 6px;
+}
+
 .c-shadow { box-shadow:0 2px 8px rgba(0, 0, 0, 0.3); }
 .c-shadow-big { box-shadow:20px 20px 40px rgba(75, 60, 85, 0.5); }
 
@@ -10,13 +41,12 @@ body {
 .error { border-color:#ee5f5b;color:#b94a48; }
 
 .floatleft {float: left;}
+.floatright {float: right;}
 .bold {font-weight: bold;}
 
 .smalltext{font-size: 10px;}
 
 .cursor-pointer{cursor: pointer;}
-
-#modal-backdrop {display: none; position: absolute; top: 0px; left: 0px; z-index: 25; background-color: gray; opacity: .5; height: 100%; width: 100%;}
 
 #Packagely-navbar-logo {margin-right: 6px;}
 
@@ -36,13 +66,17 @@ body { background-color:transparent; }
 
 #content-inner { padding:2em; }
 
-
-h1 {color: #444 ;font-size:30px;text-shadow:0 0 4px rgba(200, 200, 200, 0.6);}
-
 #content-inner { background-color:#505050;color:#fafafa;border:1px solid #111;border-radius:16px; }
 
-.btn {
-font-size: 18px;
+#startbutton, #gbutton {font-weight: bold;}
+
+#colophon {margin-top: 200px;}
+
+tr.odd {
+      background-color: #f6fff6;
 }
 
-#startbutton, #gbutton {font-weight: bold;}
+.select2-choice, .select2-arrow, .select2-input,  {
+  background-image: none;
+  background-color: transparent;
+}

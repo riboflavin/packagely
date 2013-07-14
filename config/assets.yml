@@ -5,6 +5,7 @@ javascripts:
     all:
         - public/javascripts/vendor/jquery.min.js
         - public/javascripts/vendor/bootstrap.js
+        - public/javascripts/vendor/zclip.js
         - public/javascripts/components/c-front.js
         - public/javascripts/components/select2/select2.js
 stylesheets:

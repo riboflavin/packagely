@@ -2,30 +2,42 @@
 	<%= include_stylesheets :all %>
 <% end %>
 
-<div class="container">
-
+<div id="main">
+<h2><u>10gen Content Packaging Advice</u></h2>
 <h2>I need to promote...</h2>
 
-<select id="types" style="width: 600px;">
-	<option>Please Select...</option>
+<select id="types">
+	<option></option>
 </select>
 
-<h2>Here's what to use:</h2>
-
-<p>
-  <button class="btn btn-primary" type="button" id="display_button" data-toggle="recommended" onclick="toggle_display();">Showing Recommended, Show All</button>
-</p>
+<div id="results-container">
+<h2>
+	Consider creating:
+<button class="btn floatright" type="button" id="display-button" data-toggle="recommended" onclick="toggle_display();">
+	<i class="icon-list-alt" id="btn-img"></i><span> See All</span>
+</button>
+<button class="btn floatright" type="button" id="clip-copy" style="margin-right: 10px;">
+	<i class="icon-file"></i><span> Copy to Clipboard</span>
+</button>
+<button class="btn floatright" type="button" id="jira-copy" style="margin-right: 10px;">
+	<i class="icon-leaf"></i><span> Send to Jira</span>
+</button>
+</h2>
 
 <table id="results" class="table">
-	<tr id="header">
+	<thead>
+		<tr id="header">
 		<th>Content Type</th>
-		<th>How Many?</th>
 		<th>Who Can Help?</th>
 		<th>Notes</th>
-	</tr>
+		</tr>
+	</thead>
 </table>
+</div>
 
-<small style="color:white;">Written by <a href="http://justindunham.net" style="color: white; text-decoration: underline;">Justin Dunham</a>. <a href="http://www.github.com/riboflavin/riseofthe" style="color: white; text-decoration: underline;">Source code on Github</a>.</small>
+<div id="colophon">
+<small>Written by <a href="http://justindunham.net">Justin Dunham</a>. <a href="http://www.github.com/riboflavin/packagely">Source code on Github</a>.</small>
+</div>
 </div>
 
 
