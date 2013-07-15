@@ -1,6 +1,4 @@
 
-//{Content Name, {Promotable?, Owner, Notes}}
-
 var content_types_db = {
 'Blog Post': 
 { 
@@ -195,7 +193,6 @@ var content_types_db = {
 		[
 			['Tweet', 2, ''],
 			['Blog Post', 1, ''],
-			['Presentation (Video and Slides)', 1, ''],
 			['LinkedIn Group Post', 1, ''],
 			['Facebook Status', 1, ''],
 			['LinkedIn Update', 3, '']
@@ -296,7 +293,7 @@ var content_types_db = {
 $(document).ready(init);
 
 function get_clip_text() {
-			var copytext = '';
+			var copytext = 'Content Summary:';
 			$('#results').find('tr:visible').each(function(i,el){
 				$(el).find('td').each(function(j,l){
 					copytext = copytext + $(l).text() + '\t';	
@@ -316,13 +313,6 @@ function init() {
 		url = url + encodeURIComponent(get_clip_text());
 		url = url + "&reporter=";
 		window.open(url);
-	});
-
-	$('#clip-copy').zclip({
-		path: '/javascripts/vendor/ZeroClipboard.swf',
-		copy: function() {
-			var copytext = get_clip_text();
-		}
 	});
 
 	$('#results-container').hide();
@@ -374,11 +364,6 @@ function init() {
 	   }
 }
 
-function display_reset()
-{
-
-}
-
 function show_types(e) {
 	 var show_package = content_types_db[e.val].package;
 	 $('#results-container').fadeOut(300,function(){
@@ -393,11 +378,22 @@ function show_types(e) {
 
 	 $('#display-button').attr('data-toggle','');
 	 toggle_display();
+	 });
+}
 
+function clip_refresh() {
+	 $('#clip-copy').popover('destroy');
+	 $('#clip-copy').popover(
+	 {
+	     trigger: 'click',
+	     html: true,
+	     placement: 'bottom',
+	     content: '<textarea id="copytext">' + get_clip_text() + '</textarea>'
 	 });
 }
 
 function toggle_display() {
+	$('#clip-copy').popover('destroy');
 	$('#results-container').fadeOut(300,function(){
 
 	if ($('#display-button').attr('data-toggle') == 'recommended')
@@ -406,16 +402,16 @@ function toggle_display() {
 		 $('tr').filter(':odd').addClass('odd');
 		 $('#display-button').attr('data-toggle','all').find('span').text(' See Recommended Only');
 		 $('#btn-img').removeClass('icon-list-alt').addClass('icon-ok');
-		 $('#results-container').fadeIn(300);
+		 $('#results-container').fadeIn(300,function(){clip_refresh();});
 	}
 	else
 	{
 		 $('tr').show().removeClass('odd');
-	    $('tr[data-package="1"]').filter(':odd').addClass('odd');
-	    $('tr[data-package="0"]').hide();
+ 	     $('tr[data-package="1"]').filter(':odd').addClass('odd');
+	     $('tr[data-package="0"]').hide();
 		 $('#display-button').attr('data-toggle','recommended').find('span').text(' See All');
 		 $('#btn-img').removeClass('icon-ok').addClass('icon-list-alt');
-		 $('#results-container').fadeIn(300);
+		 $('#results-container').fadeIn(300,function(){clip_refresh();});
 	}
 	});
 }
